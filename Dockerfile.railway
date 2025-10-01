@@ -1,0 +1,12 @@
+# Railway deployment file
+FROM docker/compose:latest
+
+# Copy the entire project
+COPY . /app
+WORKDIR /app
+
+# Expose the Grafana port
+EXPOSE 3000
+
+# Start the services
+CMD ["docker-compose", "up", "--build"]
