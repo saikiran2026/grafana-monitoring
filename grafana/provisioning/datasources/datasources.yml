@@ -13,13 +13,13 @@ datasources:
   - name: PostgreSQL
     type: postgres
     access: proxy
-    url: postgres:5432
-    database: synthetic_data
-    user: grafana
+    url: ${DATABASE_URL}
+    database: ${DATABASE_NAME}
+    user: ${DATABASE_USER}
     secureJsonData:
-      password: grafana
+      password: ${DATABASE_PASSWORD}
     jsonData:
-      sslmode: disable
+      sslmode: require
       maxOpenConns: 10
       maxIdleConns: 10
       connMaxLifetime: 14400
